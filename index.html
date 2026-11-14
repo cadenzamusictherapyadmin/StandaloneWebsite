@@ -7,6 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Sign Up for a Class</h2>
+            <form id="modalContactForm" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="modalName" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="modalEmail" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="modalPhone" name="phone" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                    <select id="modalServiceType" name="serviceType" required>
+                        <option value="">Select a Program</option>
+                        <option value="Heartbeat Harmonies (0-8 months)">Heartbeat Harmonies (0-8 months)</option>
+                        <option value="Little Notes, Big Steps (8-18 months)">Little Notes, Big Steps (8-18 months)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="modalMessage" name="message" placeholder="Tell us about you and your baby" rows="4"></textarea>
+                </div>
+                <button type="submit" class="button button-large">Send My Inquiry</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -67,7 +97,7 @@
                         <p><strong>Fridays, 10:30-11:00 AM</strong><br>$175 for 9 sessions</p>
                         <div class="button-group">
                             <a href="artifacts/Heartbeat Harmonies (0-8 months).pdf" class="button button-small" download>Download Details</a>
-                            <a href="#contact" class="button button-small button-primary signup-btn" data-program="Heartbeat Harmonies (0-8 months)">Sign Up</a>
+                            <button class="button button-small button-primary signup-btn" data-program="Heartbeat Harmonies (0-8 months)">Sign Up</button>
                         </div>
                     </div>
                 </div>
@@ -83,7 +113,7 @@
                         <p><strong>Fridays, 11:15-11:45 AM</strong><br>$175 for 9 sessions</p>
                         <div class="button-group">
                             <a href="artifacts/Little Notes, Big Steps (8-18months).pdf" class="button button-small" download>Download Details</a>
-                            <a href="#contact" class="button button-small button-primary signup-btn" data-program="Little Notes, Big Steps (8-18 months)">Sign Up</a>
+                            <button class="button button-small button-primary signup-btn" data-program="Little Notes, Big Steps (8-18 months)">Sign Up</button>
                         </div>
                     </div>
                 </div>
