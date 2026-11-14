@@ -1,7 +1,22 @@
-// Initialize EmailJS
-(function() {
-    emailjs.init("_aysIkRUPN3haZ-H-");
-})();
+// Initialize EmailJS with retry logic
+let emailjsInitialized = false;
+
+function initEmailJS() {
+    if (typeof emailjs !== 'undefined' && !emailjsInitialized) {
+        try {
+            emailjs.init("_aysIkRUPN3haZ-H-");
+            emailjsInitialized = true;
+            console.log('EmailJS initialized successfully');
+        } catch (error) {
+            console.error('Failed to initialize EmailJS:', error);
+        }
+    } else if (typeof emailjs === 'undefined') {
+        // Retry in 100ms if not loaded yet
+        setTimeout(initEmailJS, 100);
+    }
+}
+
+initEmailJS();
 
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
@@ -66,6 +81,14 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
         
+        // Check if EmailJS is available
+        if (typeof emailjs === 'undefined') {
+            alert('Error: Email service is not available. Please email us directly at cadenzamusictherapy@gmail.com');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            return;
+        }
+        
         // Send email through EmailJS
         emailjs.send('service_vu74e6b', 'template_dhn2sef', templateParams)
             .then(function(response) {
@@ -112,6 +135,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
+            
+            // Check if EmailJS is available
+            if (typeof emailjs === 'undefined') {
+                alert('Error: Email service is not available. Please email us directly at cadenzamusictherapy@gmail.com');
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                return;
+            }
             
             // Send email through EmailJS
             emailjs.send('service_vu74e6b', 'template_dhn2sef', templateParams)
