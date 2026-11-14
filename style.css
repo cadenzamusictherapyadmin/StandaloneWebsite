@@ -175,38 +175,38 @@ body {
 }
 
 /* Services Section */
-.program-content {
+.programs-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
-    align-items: center;
-    margin-bottom: 4rem;
 }
 
-.program-content-reverse {
-    direction: rtl;
+.program-card {
+    display: flex;
+    flex-direction: column;
 }
 
-.program-content-reverse > * {
-    direction: ltr;
-}
-
-.program-text h3 {
-    color: var(--primary-color);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.program-text p {
-    color: var(--light-text);
-    line-height: 1.8;
-    margin-bottom: 0.75rem;
+.program-image {
+    width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 .program-image img {
     width: 100%;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+}
+
+.program-text h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.program-text p {
+    color: var(--light-text);
+    line-height: 1.8;
+    margin-bottom: 0.75rem;
 }
 
 .button-small {
@@ -222,6 +222,7 @@ body {
     cursor: pointer;
     font-size: 0.9rem;
     margin-top: 1rem;
+    align-self: flex-start;
 }
 
 .button-small:hover {
@@ -477,12 +478,8 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .program-content {
+    .programs-grid {
         grid-template-columns: 1fr;
-    }
-
-    .program-content-reverse {
-        direction: ltr;
     }
 
     .contact-wrapper {
