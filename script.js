@@ -1,6 +1,6 @@
 // Initialize EmailJS
 (function() {
-    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY"); // You'll need to replace this
+    emailjs.init("_aysIkRUPN3haZ-H-"); // You'll need to replace this
 })();
 
 // Handle form submission
@@ -26,7 +26,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     submitBtn.disabled = true;
     
     // Send email through EmailJS
-    emailjs.send('YOUR_EMAILJS_SERVICE_ID', 'YOUR_EMAILJS_TEMPLATE_ID', templateParams)
+    emailjs.send('service_vu74e6b', 'template_dhn2sef', templateParams)
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             
