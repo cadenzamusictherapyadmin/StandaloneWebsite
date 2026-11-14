@@ -3,6 +3,18 @@
     emailjs.init("_aysIkRUPN3haZ-H-"); // You'll need to replace this
 })();
 
+// Handle signup button clicks to prepopulate program
+document.querySelectorAll('.signup-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        const program = this.getAttribute('data-program');
+        if (program) {
+            setTimeout(() => {
+                document.getElementById('serviceType').value = program;
+            }, 100);
+        }
+    });
+});
+
 // Handle form submission
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
