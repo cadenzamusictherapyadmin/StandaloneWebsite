@@ -174,41 +174,39 @@ body {
     font-size: 1.2rem;
 }
 
-/* Services Grid */
-.services-grid {
+/* Services Section */
+.program-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
 }
 
-.service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.program-content-reverse {
+    direction: rtl;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(139, 90, 140, 0.15);
+.program-content-reverse > * {
+    direction: ltr;
 }
 
-.service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.service-card h3 {
+.program-text h3 {
     color: var(--primary-color);
+    font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
-.service-card p {
+.program-text p {
     color: var(--light-text);
     line-height: 1.8;
     margin-bottom: 0.75rem;
+}
+
+.program-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
 }
 
 .button-small {
@@ -479,6 +477,14 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .program-content {
+        grid-template-columns: 1fr;
+    }
+
+    .program-content-reverse {
+        direction: ltr;
+    }
+
     .contact-wrapper {
         grid-template-columns: 1fr;
     }
@@ -487,7 +493,6 @@ body {
         font-size: 2rem;
     }
 
-    .services-grid,
     .schedule-grid,
     .testimonials-grid,
     .faq-grid {
