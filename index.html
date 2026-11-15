@@ -238,14 +238,13 @@
         </div>
     </footer>
 
-    <!-- EmailJS Script with CDN fallback -->
+    <!-- EmailJS Script - Local copy for reliability -->
     <script>
-        // Check if CDN will load and log the attempt
-        console.log('📡 Attempting to load EmailJS from unpkg CDN...');
+        console.log('📡 Loading EmailJS from local file...');
     </script>
-    <script type="text/javascript" src="https://unpkg.com/@emailjs/browser@3/dist/index.min.js" 
-        onload="window.emailjsLoaded = true; console.log('✅ EmailJS CDN loaded from unpkg')" 
-        onerror="console.error('❌ EmailJS CDN failed to load from unpkg'); window.emailjsLoaded = false;"></script>
+    <script type="text/javascript" src="emailjs.min.js" 
+        onload="window.emailjsLoaded = true; console.log('✅ EmailJS loaded from local file')" 
+        onerror="console.error('❌ EmailJS failed to load from local file'); window.emailjsLoaded = false;"></script>
     <script>
         // Verify script loaded after a small delay
         setTimeout(function() {
