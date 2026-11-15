@@ -200,21 +200,25 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => {
                 if (typeof emailjs === 'undefined') {
                     console.error('❌ EmailJS still not available after waiting');
-                    alert('Error: Email service is not available. Please email us directly at cadenzamusictherapy@gmail.com');
+                    showNotification('Error: Email service is not available. Please email us directly at cadenzamusictherapy@gmail.com', false);
                     submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
                     return;
                 }
                 console.log('✅ EmailJS loaded during wait, proceeding with send');
                 // If it loaded, send the email
-                sendEmailViaEmailJS(templateParams, form, submitBtn, originalText);
+                sendEmailViaEmailJS(templateParams, form, submitBtn, originalText, () => {
+                    modal.classList.remove('show');
+                });
             }, 500);
             return;
         }
         
         console.log('✅ EmailJS ready, sending email immediately');
         // Send email through EmailJS
-        sendEmailViaEmailJS(templateParams, form, submitBtn, originalText);
+        sendEmailViaEmailJS(templateParams, form, submitBtn, originalText, () => {
+            modal.classList.remove('show');
+        });
     });
 
     // Handle bottom contact form submission (keep for people scrolling to it)
