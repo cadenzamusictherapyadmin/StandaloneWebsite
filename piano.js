@@ -19,6 +19,8 @@ function initEmailJS() {
 }
 
 initEmailJS();
+
+document.addEventListener('DOMContentLoaded', function() {
     // Handle slot button clicks
     const slotButtons = document.querySelectorAll('.slot-button');
     
