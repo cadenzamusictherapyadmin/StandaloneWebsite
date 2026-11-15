@@ -194,7 +194,7 @@ function submitBookingForm() {
     
     const form = document.getElementById('bookingForm');
     const templateParams = {
-        title: 'Piano/Guitar Lesson Booking Request',
+        title: 'Piano & Guitar Lesson Booking Request',
         name: document.getElementById('pianoName').value,
         email: document.getElementById('pianoEmail').value,
         phone: document.getElementById('pianoPhone').value,
@@ -242,7 +242,7 @@ function submitQuestionsForm() {
     
     const form = document.getElementById('questionsForm');
     const templateParams = {
-        title: 'Piano/Guitar Lesson Question',
+        title: 'Piano & Guitar Lesson Question',
         name: document.getElementById('questionsName').value,
         email: document.getElementById('questionsEmail').value,
         phone: document.getElementById('questionsPhone').value,
