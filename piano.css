@@ -3,30 +3,32 @@
 .piano-hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 6rem 0;
+    padding: 3rem 0;
 }
 
-.piano-hero h1 {
+.piano-hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-text h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    margin-top: 0;
 }
 
-.piano-hero p {
+.hero-text p {
     font-size: 1.2rem;
     margin-bottom: 0.75rem;
     opacity: 0.95;
 }
 
-.piano-hero .cta-button {
-    margin-top: 2rem;
-    background-color: #FFD6E8;
-    color: #764ba2;
-    font-weight: 700;
-}
-
-.piano-hero .cta-button:hover {
-    background-color: #FFE5F0;
-    transform: translateY(-2px);
+.hero-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
 /* Info Cards Section */
@@ -173,154 +175,71 @@
     background-color: white;
 }
 
-/* Calendar Modal */
-.modal-large {
-    max-width: 600px;
-}
-
-.calendar-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    gap: 1rem;
-}
-
-.calendar-controls h3 {
-    margin: 0;
-    color: var(--primary-color);
-    flex: 1;
-    text-align: center;
-}
-
-.calendar-controls button {
-    min-width: 120px;
-}
-
-/* Calendar Grid */
-.calendar-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0.5rem;
-    margin-bottom: 2rem;
-}
-
-.calendar-header {
-    font-weight: 700;
-    text-align: center;
-    padding: 0.75rem;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 4px;
-}
-
-.calendar-day {
-    aspect-ratio: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #ddd;
-    border-radius: 6px;
-    cursor: pointer;
+/* Available Slots Section */
+.piano-slots {
     background: white;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    padding: 4rem 0;
 }
 
-.calendar-day:hover:not(.empty):not(.other-month) {
-    background-color: #f0f0f0;
-    transform: scale(1.05);
-}
-
-.calendar-day.empty {
-    background: transparent;
-    border: none;
-    cursor: default;
-}
-
-.calendar-day.other-month {
-    color: #ccc;
-    cursor: default;
-}
-
-.calendar-day.has-slots {
-    border-color: var(--primary-color);
-    background-color: #f5f0ff;
-}
-
-.calendar-day.has-slots:hover {
-    background-color: var(--accent-color);
-    color: white;
-}
-
-/* Available Slots */
-.available-slots {
-    background-color: #f9f9f9;
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    border: 2px solid #eee;
-}
-
-.available-slots h4 {
-    margin-top: 0;
+.piano-slots h2 {
+    text-align: center;
     color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
-.slots-container {
+.slots-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--light-text);
+    margin-bottom: 3rem;
+}
+
+.slots-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.day-column {
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border-top: 4px solid var(--primary-color);
+    text-align: center;
+}
+
+.day-column h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.time-slots {
+    display: flex;
+    flex-direction: column;
     gap: 0.75rem;
 }
 
-.time-slot {
-    padding: 0.75rem;
+.slot-button {
+    padding: 0.75rem 1rem;
+    background-color: white;
+    color: var(--primary-color);
     border: 2px solid var(--primary-color);
     border-radius: 6px;
-    text-align: center;
-    cursor: pointer;
-    background: white;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    color: var(--primary-color);
-}
-
-.time-slot:hover {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.time-slot.selected {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.slot-info {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 0.5rem;
-}
-
-.lesson-type-select {
-    margin-top: 1rem;
-    padding: 1rem;
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-}
-
-.lesson-type-select label {
-    display: block;
-    margin-bottom: 0.75rem;
     font-weight: 600;
-    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
-.lesson-type-select select {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
+.slot-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 /* Booking Modal */
@@ -349,29 +268,24 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .piano-hero h1 {
+    .piano-hero-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero-text h1 {
         font-size: 2rem;
     }
 
-    .piano-hero p {
+    .hero-text p {
         font-size: 1rem;
     }
 
-    .calendar-grid {
-        gap: 0.25rem;
+    .slots-grid {
+        grid-template-columns: 1fr;
     }
 
-    .calendar-day {
-        font-size: 0.9rem;
-        aspect-ratio: auto;
-        padding: 0.5rem;
-    }
-
-    .slots-container {
-        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    }
-
-    .modal-large {
-        max-width: 90%;
+    .day-column {
+        padding: 1.5rem;
     }
 }

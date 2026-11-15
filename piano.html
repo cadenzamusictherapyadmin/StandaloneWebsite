@@ -23,37 +23,15 @@
         </div>
     </nav>
 
-    <!-- Calendar Modal -->
-    <div id="calendarModal" class="modal">
-        <div class="modal-content modal-large">
-            <span class="modal-close">&times;</span>
-            <h2>Book Your Lesson</h2>
-            
-            <div class="calendar-controls">
-                <button class="button button-small" id="prevMonth">&lt; Previous</button>
-                <h3 id="monthYear"></h3>
-                <button class="button button-small" id="nextMonth">Next &gt;</button>
-            </div>
-
-            <div class="calendar-grid" id="calendarGrid"></div>
-
-            <div class="available-slots" id="availableSlots">
-                <h4>Available Times</h4>
-                <div class="slots-container" id="slotsContainer">
-                    <!-- Slots will be populated by JavaScript -->
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Booking Form Modal -->
     <div id="bookingModal" class="modal">
         <div class="modal-content">
             <span class="modal-close">&times;</span>
-            <h2>Complete Your Booking</h2>
+            <h2>Book Your Lesson</h2>
             <form id="bookingForm" class="contact-form">
                 <div class="form-section">
-                    <p><strong>Selected Lesson:</strong></p>
+                    <p><strong>Lesson Time:</strong></p>
                     <p id="selectedLessonDisplay"></p>
                 </div>
 
@@ -77,7 +55,7 @@
                     <textarea id="pianoMessage" name="message" placeholder="Tell us about your experience level or any questions you have" rows="4"></textarea>
                 </div>
 
-                <input type="hidden" id="selectedLessonType" name="lessonType">
+                <input type="hidden" id="selectedLessonType" name="lessonType" value="Piano/Guitar">
                 <input type="hidden" id="selectedDateTime" name="selectedDateTime">
 
                 <button type="submit" class="button button-large">Book This Lesson</button>
@@ -87,12 +65,14 @@
 
     <!-- Hero Section -->
     <section class="section hero piano-hero">
-        <div class="container">
-            <div class="hero-content">
+        <div class="container piano-hero-content">
+            <div class="hero-text">
                 <h1>Piano & Guitar Lessons</h1>
                 <p>Learn from Lacey Friesen, an accomplished pianist and guitarist.</p>
                 <p>Whether you're a beginner or looking to improve your skills, individual lessons are tailored to your goals.</p>
-                <button class="button button-large cta-button" id="openCalendarBtn">Book a Lesson</button>
+            </div>
+            <div class="hero-image">
+                <img src="artifacts/piano.png" alt="Piano Lessons with Lacey">
             </div>
         </div>
     </section>
@@ -127,12 +107,45 @@
                     <h3>📋 How It Works</h3>
                     <p>Book a lesson in just a few steps:</p>
                     <ol class="lesson-steps">
-                        <li>Click "Book a Lesson" above</li>
-                        <li>Select your preferred date and time</li>
-                        <li>Choose your instrument</li>
-                        <li>Provide your contact information</li>
-                        <li>Confirm your booking</li>
+                        <li>Select your preferred day and time below</li>
+                        <li>Click the time slot to book</li>
+                        <li>Fill in your contact information</li>
+                        <li>We'll confirm your booking via email</li>
                     </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Slots Section -->
+    <section class="section piano-slots">
+        <div class="container">
+            <h2>Available Lesson Times</h2>
+            <p class="slots-intro">Click any time slot below to book your lesson</p>
+            
+            <div class="slots-grid">
+                <div class="day-column">
+                    <h3>Tuesday</h3>
+                    <div class="time-slots">
+                        <button class="slot-button" data-time="Tuesday at 5:00 PM">5:00 PM</button>
+                        <button class="slot-button" data-time="Tuesday at 6:30 PM">6:30 PM</button>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <h3>Wednesday</h3>
+                    <div class="time-slots">
+                        <button class="slot-button" data-time="Wednesday at 7:00 PM">7:00 PM</button>
+                    </div>
+                </div>
+
+                <div class="day-column">
+                    <h3>Thursday</h3>
+                    <div class="time-slots">
+                        <button class="slot-button" data-time="Thursday at 2:00 PM">2:00 PM</button>
+                        <button class="slot-button" data-time="Thursday at 2:30 PM">2:30 PM</button>
+                        <button class="slot-button" data-time="Thursday at 3:00 PM">3:00 PM</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,7 +181,6 @@
         <div class="container">
             <h2>Questions?</h2>
             <p>Email us at <a href="mailto:cadenzamusictherapy@gmail.com">cadenzamusictherapy@gmail.com</a> with any questions about lesson availability or pricing.</p>
-            <button class="button button-large cta-button" id="openCalendarBtn2">Book a Lesson</button>
         </div>
     </section>
 
