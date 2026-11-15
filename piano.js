@@ -194,14 +194,15 @@ function submitBookingForm() {
     
     const form = document.getElementById('bookingForm');
     const templateParams = {
-        to_email: 'cadenzamusictherapy@gmail.com',
-        from_name: document.getElementById('pianoName').value,
-        from_email: document.getElementById('pianoEmail').value,
+        title: 'Piano/Guitar Lesson Booking Request',
+        name: document.getElementById('pianoName').value,
+        email: document.getElementById('pianoEmail').value,
         phone: document.getElementById('pianoPhone').value,
-        lesson_type: 'Piano/Guitar Lesson',
+        service_type: '',
+        service_type_display: 'none',
         lesson_datetime: document.getElementById('selectedDateTime').value,
-        message: document.getElementById('pianoMessage').value,
-        inquiry_type: 'Piano/Guitar Lesson Booking'
+        lesson_datetime_display: 'table-row',
+        message: document.getElementById('pianoMessage').value
     };
 
     console.log('Form data collected:', templateParams.from_name, templateParams.from_email, templateParams.lesson_datetime);
@@ -241,12 +242,15 @@ function submitQuestionsForm() {
     
     const form = document.getElementById('questionsForm');
     const templateParams = {
-        to_email: 'cadenzamusictherapy@gmail.com',
-        from_name: document.getElementById('questionsName').value,
-        from_email: document.getElementById('questionsEmail').value,
+        title: 'Piano/Guitar Lesson Question',
+        name: document.getElementById('questionsName').value,
+        email: document.getElementById('questionsEmail').value,
         phone: document.getElementById('questionsPhone').value,
-        message: document.getElementById('questionsMessage').value,
-        inquiry_type: 'Piano/Guitar Lesson Question'
+        service_type: '',
+        service_type_display: 'none',
+        lesson_datetime: '',
+        lesson_datetime_display: 'none',
+        message: document.getElementById('questionsMessage').value
     };
 
     console.log('Form data collected:', templateParams.from_name, templateParams.from_email);

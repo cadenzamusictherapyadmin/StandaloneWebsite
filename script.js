@@ -175,11 +175,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Collect form data
         const templateParams = {
-            to_email: 'cadenzamusictherapy@gmail.com',
-            from_name: document.getElementById('modalName').value,
-            from_email: document.getElementById('modalEmail').value,
+            title: 'New Class Inquiry',
+            name: document.getElementById('modalName').value,
+            email: document.getElementById('modalEmail').value,
             phone: document.getElementById('modalPhone').value,
             service_type: document.getElementById('modalServiceType').value,
+            service_type_display: 'table-row',
+            lesson_datetime: '',
+            lesson_datetime_display: 'none',
             message: document.getElementById('modalMessage').value
         };
         
@@ -224,11 +227,14 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Collect form data
             const templateParams = {
-                to_email: 'cadenzamusictherapy@gmail.com',
-                from_name: document.getElementById('name').value,
-                from_email: document.getElementById('email').value,
+                title: 'New Contact Form Inquiry',
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
                 phone: document.getElementById('phone').value,
                 service_type: document.getElementById('serviceType').value,
+                service_type_display: 'table-row',
+                lesson_datetime: '',
+                lesson_datetime_display: 'none',
                 message: document.getElementById('message').value
             };
             
