@@ -1,3 +1,9 @@
+// Check if EmailJS is available immediately
+console.log('⏱️ script.js loading - checking for emailjs globally:', typeof emailjs !== 'undefined');
+if (typeof window !== 'undefined') {
+    console.log('Window.emailjs available:', typeof window.emailjs !== 'undefined');
+}
+
 // Helper function to send email via EmailJS
 function sendEmailViaEmailJS(templateParams, form, submitBtn, originalText, closeModalFn) {
     console.log('=== SENDING EMAIL ===');
