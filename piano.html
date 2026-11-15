@@ -227,8 +227,24 @@
         </div>
     </footer>
 
-    <!-- EmailJS Script -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js" onload="console.log('✅ EmailJS CDN script loaded successfully')" onerror="console.error('❌ EmailJS CDN script failed to load')"></script>
+    <!-- EmailJS Script with CDN fallback -->
+    <script>
+        // Check if CDN will load and log the attempt
+        console.log('📡 Attempting to load EmailJS from CDN...');
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js" 
+        onload="window.emailjsLoaded = true; console.log('✅ EmailJS CDN loaded from cdn.jsdelivr.net')" 
+        onerror="console.error('❌ EmailJS CDN failed to load from cdn.jsdelivr.net'); window.emailjsLoaded = false;"></script>
+    <script>
+        // Verify script loaded after a small delay
+        setTimeout(function() {
+            console.log('📊 EmailJS Check (100ms after script tag):', {
+                emailjs_defined: typeof emailjs !== 'undefined',
+                window_emailjs: typeof window.emailjs !== 'undefined',
+                emailjs_loaded: window.emailjsLoaded || false
+            });
+        }, 100);
+    </script>
     <script src="piano.js"></script>
 </body>
 </html>
