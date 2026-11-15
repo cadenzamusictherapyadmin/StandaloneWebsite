@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Lessons - Cadenza Music Therapy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="piano.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Cadenza Music Therapy</div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Calendar Modal -->
+    <div id="calendarModal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="modal-close">&times;</span>
+            <h2>Book Your Lesson</h2>
+            
+            <div class="calendar-controls">
+                <button class="button button-small" id="prevMonth">&lt; Previous</button>
+                <h3 id="monthYear"></h3>
+                <button class="button button-small" id="nextMonth">Next &gt;</button>
+            </div>
+
+            <div class="calendar-grid" id="calendarGrid"></div>
+
+            <div class="available-slots" id="availableSlots">
+                <h4>Available Times</h4>
+                <div class="slots-container" id="slotsContainer">
+                    <!-- Slots will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Form Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Complete Your Booking</h2>
+            <form id="bookingForm" class="contact-form">
+                <div class="form-section">
+                    <p><strong>Selected Lesson:</strong></p>
+                    <p id="selectedLessonDisplay"></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="pianoName">Your Name</label>
+                    <input type="text" id="pianoName" name="name" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pianoEmail">Email</label>
+                    <input type="email" id="pianoEmail" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pianoPhone">Phone Number</label>
+                    <input type="tel" id="pianoPhone" name="phone" placeholder="Phone Number">
+                </div>
+
+                <div class="form-group">
+                    <label for="pianoMessage">Experience Level / Questions</label>
+                    <textarea id="pianoMessage" name="message" placeholder="Tell us about your experience level or any questions you have" rows="4"></textarea>
+                </div>
+
+                <input type="hidden" id="selectedLessonType" name="lessonType">
+                <input type="hidden" id="selectedDateTime" name="selectedDateTime">
+
+                <button type="submit" class="button button-large">Book This Lesson</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="section hero piano-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Piano & Guitar Lessons</h1>
+                <p>Learn from Lacey Friesen, an accomplished pianist and guitarist.</p>
+                <p>Whether you're a beginner or looking to improve your skills, individual lessons are tailored to your goals.</p>
+                <button class="button button-large cta-button" id="openCalendarBtn">Book a Lesson</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Lessons Section -->
+    <section class="section piano-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🎹 Piano Lessons</h3>
+                    <p>From classical to contemporary, explore the piano with personalized instruction. Perfect for all ages and skill levels.</p>
+                    <ul class="lesson-details">
+                        <li>Individual sessions</li>
+                        <li>Flexible scheduling</li>
+                        <li>Customized curriculum</li>
+                        <li>Performance preparation available</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎸 Guitar Lessons</h3>
+                    <p>Learn acoustic or electric guitar with guidance tailored to your musical interests and pace.</p>
+                    <ul class="lesson-details">
+                        <li>All skill levels welcome</li>
+                        <li>Genre flexibility (classical, rock, folk, etc.)</li>
+                        <li>Music theory integrated</li>
+                        <li>Practice guidance provided</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>📋 How It Works</h3>
+                    <p>Book a lesson in just a few steps:</p>
+                    <ol class="lesson-steps">
+                        <li>Click "Book a Lesson" above</li>
+                        <li>Select your preferred date and time</li>
+                        <li>Choose your instrument</li>
+                        <li>Provide your contact information</li>
+                        <li>Confirm your booking</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section piano-faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Do I need my own instrument?</h3>
+                    <p>It's recommended to have your own instrument for practice, but we can discuss options if this is a barrier to learning.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How long are lessons?</h3>
+                    <p>Standard lessons are 30, 45, or 60 minutes. We'll find the duration that works best for your learning style.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can I reschedule lessons?</h3>
+                    <p>Yes! Life happens. Please provide as much notice as possible if you need to reschedule.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you offer group lessons?</h3>
+                    <p>Primarily individual lessons for personalized instruction, but inquire about options for small groups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section piano-contact">
+        <div class="container">
+            <h2>Questions?</h2>
+            <p>Email us at <a href="mailto:cadenzamusictherapy@gmail.com">cadenzamusictherapy@gmail.com</a> with any questions about lesson availability or pricing.</p>
+            <button class="button button-large cta-button" id="openCalendarBtn2">Book a Lesson</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Cadenza Music Therapy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+    <script src="script.js"></script>
+    <script src="piano.js"></script>
+</body>
+</html>
