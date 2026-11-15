@@ -1,5 +1,11 @@
 /* Piano Page Styles */
 
+/* Force light mode - make sure colors are visible */
+html, body {
+    background-color: white;
+    color: #333;
+}
+
 /* Ensure modals are hidden by default */
 #bookingModal,
 #questionsModal {
@@ -22,7 +28,7 @@
 }
 
 .piano-hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     color: white;
     padding: 3rem 0;
 }
@@ -54,7 +60,7 @@
 
 /* Info Cards Section */
 .piano-info {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa !important;
     padding: 4rem 0;
 }
 
@@ -160,7 +166,7 @@
 
 /* Contact Section */
 .piano-contact {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #8B5A8E 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #8B5A8E 100%) !important;
     color: white;
     text-align: center;
     padding: 4rem 0;
@@ -198,7 +204,7 @@
 
 /* Available Slots Section */
 .piano-slots {
-    background: white;
+    background: white !important;
     padding: 4rem 0;
 }
 
