@@ -23,7 +23,6 @@
         </div>
     </nav>
 
-
     <!-- Booking Form Modal -->
     <div id="bookingModal" class="modal">
         <div class="modal-content">
@@ -48,6 +47,51 @@
                 <div class="form-group">
                     <label for="pianoPhone">Phone Number</label>
                     <input type="tel" id="pianoPhone" name="phone" placeholder="Phone Number">
+                </div>
+
+                <div class="form-group">
+                    <label for="pianoMessage">Experience Level / Questions</label>
+                    <textarea id="pianoMessage" name="message" placeholder="Tell us about your experience level or any questions you have" rows="4"></textarea>
+                </div>
+
+                <input type="hidden" id="selectedLessonType" name="lessonType" value="Piano/Guitar">
+                <input type="hidden" id="selectedDateTime" name="selectedDateTime">
+
+                <button type="submit" class="button button-large">Book This Lesson</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Questions Form Modal -->
+    <div id="questionsModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2>Send us a Question</h2>
+            <form id="questionsForm" class="contact-form">
+                <div class="form-group">
+                    <label for="questionsName">Your Name</label>
+                    <input type="text" id="questionsName" name="name" placeholder="Full Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="questionsEmail">Email</label>
+                    <input type="email" id="questionsEmail" name="email" placeholder="Your Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="questionsPhone">Phone Number</label>
+                    <input type="tel" id="questionsPhone" name="phone" placeholder="Phone Number">
+                </div>
+
+                <div class="form-group">
+                    <label for="questionsMessage">Your Question</label>
+                    <textarea id="questionsMessage" name="message" placeholder="Ask us anything about our lessons or services" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="button button-large">Send Question</button>
+            </form>
+        </div>
+    </div>
                 </div>
 
                 <div class="form-group">
@@ -186,6 +230,7 @@
         <div class="container">
             <h2>Questions?</h2>
             <p>Email us at <a href="mailto:cadenzamusictherapy@gmail.com">cadenzamusictherapy@gmail.com</a> with any questions about lesson availability or pricing.</p>
+            <button class="button button-large cta-button" id="openQuestionsForm">Send us an Email</button>
         </div>
     </section>
 
