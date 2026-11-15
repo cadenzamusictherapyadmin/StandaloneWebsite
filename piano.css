@@ -4,13 +4,21 @@
 #bookingModal,
 #questionsModal {
     display: none !important;
+    visibility: hidden !important;
 }
 
 #bookingModal.show,
 #questionsModal.show {
     display: flex !important;
+    visibility: visible !important;
     align-items: center;
     justify-content: center;
+}
+
+/* Ensure modal content is also hidden when parent is hidden */
+#bookingModal .modal-content,
+#questionsModal .modal-content {
+    display: block;
 }
 
 .piano-hero {
