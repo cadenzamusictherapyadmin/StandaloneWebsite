@@ -4,6 +4,64 @@ if (typeof window !== 'undefined') {
     console.log('Window.emailjs available:', typeof window.emailjs !== 'undefined');
 }
 
+// Custom notification system
+function showNotification(message, isSuccess = true) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 16px 24px;
+        background-color: ${isSuccess ? '#4CAF50' : '#f44336'};
+        color: white;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        z-index: 10000;
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        animation: slideIn 0.3s ease-in-out;
+        max-width: 400px;
+    `;
+    
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+    `;
+    
+    if (!document.querySelector('style[data-notification]')) {
+        style.setAttribute('data-notification', 'true');
+        document.head.appendChild(style);
+    }
+    
+    notification.textContent = message;
+    document.body.appendChild(notification);
+    
+    // Remove after 4 seconds with animation
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease-in-out';
+        setTimeout(() => notification.remove(), 300);
+    }, 4000);
+}
+
 // Helper function to send email via EmailJS
 function sendEmailViaEmailJS(templateParams, form, submitBtn, originalText, closeModalFn) {
     console.log('=== SENDING EMAIL ===');
@@ -14,8 +72,8 @@ function sendEmailViaEmailJS(templateParams, form, submitBtn, originalText, clos
         .then(function(response) {
             console.log('✅ EMAIL SUCCESS!', response.status, response.text);
             
-            // Show success message
-            alert('Thank you! We received your inquiry and will contact you soon.');
+            // Show success notification
+            showNotification('Thank you! We received your inquiry and will contact you soon.', true);
             
             // Reset form
             form.reset();
@@ -27,8 +85,8 @@ function sendEmailViaEmailJS(templateParams, form, submitBtn, originalText, clos
         }, function(error) {
             console.error('❌ EMAIL FAILED!', error);
             
-            // Show error message
-            alert('Oops! There was an error sending your message. Please try again or email us directly at cadenzamusictherapy@gmail.com');
+            // Show error notification
+            showNotification('Oops! There was an error sending your message. Please try again or email us directly at cadenzamusictherapy@gmail.com', false);
             
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
@@ -188,21 +246,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     if (typeof emailjs === 'undefined') {
                         console.error('❌ EmailJS still not available after waiting');
-                        alert('Error: Email service is not available. Please email us directly at cadenzamusictherapy@gmail.com');
+                        showNotification('Error: Email service is not available. Please email us directly at cadenzamusictherapy@gmail.com', false);
                         submitBtn.textContent = originalText;
                         submitBtn.disabled = false;
                         return;
                     }
                     console.log('✅ EmailJS loaded during wait, proceeding with send');
                     // If it loaded, send the email
-                    sendEmailViaEmailJS(templateParams, form, submitBtn, originalText);
+                    sendEmailViaEmailJS(templateParams, form, submitBtn, originalText, () => {
+                        modal.classList.remove('show');
+                    });
                 }, 500);
                 return;
             }
             
             console.log('✅ EmailJS ready, sending email immediately');
             // Send email through EmailJS
-            sendEmailViaEmailJS(templateParams, form, submitBtn, originalText);
+            sendEmailViaEmailJS(templateParams, form, submitBtn, originalText, () => {
+                modal.classList.remove('show');
+            });
         });
     }
 
