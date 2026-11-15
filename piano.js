@@ -1,6 +1,24 @@
 // Piano Lessons Page - Slot Selection and Booking System
 
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize EmailJS with retry logic
+let emailjsInitialized = false;
+
+function initEmailJS() {
+    if (typeof emailjs !== 'undefined' && !emailjsInitialized) {
+        try {
+            emailjs.init("_aysIkRUPN3haZ-H-");
+            emailjsInitialized = true;
+            console.log('EmailJS initialized successfully');
+        } catch (error) {
+            console.error('Failed to initialize EmailJS:', error);
+        }
+    } else if (typeof emailjs === 'undefined') {
+        // Retry in 100ms if not loaded yet
+        setTimeout(initEmailJS, 100);
+    }
+}
+
+initEmailJS();
     // Handle slot button clicks
     const slotButtons = document.querySelectorAll('.slot-button');
     
