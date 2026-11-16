@@ -278,6 +278,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Flip Card Functionality
+    const flipCards = document.querySelectorAll('.flip-card');
+    
+    flipCards.forEach(card => {
+        card.addEventListener('click', function() {
+            this.classList.toggle('flipped');
+        });
+    });
+
+    // Allow pressing Escape to flip cards back
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            flipCards.forEach(card => {
+                card.classList.remove('flipped');
+            });
+        }
+    });
+
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

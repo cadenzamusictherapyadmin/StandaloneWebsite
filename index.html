@@ -142,56 +142,101 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="section gallery">
+    <!-- Gallery & FAQ Section - Interactive Flip Cards -->
+    <section id="gallery" class="section gallery-faq">
         <div class="container">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="artifacts/kids-instruments-1.png" alt="Children playing instruments in music therapy">
+            <h2>Gallery & FAQs</h2>
+            <p class="section-intro">Click any card to learn more</p>
+            <div class="flip-cards-grid">
+                <!-- Card 1: Gallery Image -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="artifacts/kids-instruments-1.png" alt="Children playing instruments in music therapy">
+                            <p class="card-title">Music Sessions</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>How do I sign up for classes?</h3>
+                            <p>You can sign up using the form on this page, and we'll contact you within 24 hours to confirm your enrollment.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="artifacts/kids-instruments-2.png" alt="Group music class with instructor">
+
+                <!-- Card 2: Gallery Image -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="artifacts/kids-instruments-2.png" alt="Group music class with instructor">
+                            <p class="card-title">No Experience Needed</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>What if I have no music experience?</h3>
+                            <p>No experience necessary! Our sessions are designed for all levels. Music therapy is about the therapeutic benefit, not musical skill.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="artifacts/lacey.png" alt="Music therapy room">
+
+                <!-- Card 3: Gallery Image -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="artifacts/lacey.png" alt="Music therapy room">
+                            <p class="card-title">Session Details</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>How long is each session?</h3>
+                            <p>Sessions run for 30 minutes. All currently offered programs cost $175 for 9 sessions. We accept payment via e-transfer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Additional FAQ -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="artifacts/HeartbeatHarmonies.jpeg" alt="Heartbeat Harmonies program">
+                            <p class="card-title">Cancellation Policy</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>What's your cancellation policy?</h3>
+                            <p>TDB</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Additional FAQ -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="artifacts/LiitleNotesBigSteps.jpeg" alt="Little Notes, Big Steps program">
+                            <p class="card-title">Virtual Sessions</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Do you offer virtual sessions?</h3>
+                            <p>Our standard programs are all in person, but I'd be happy to discuss virtual options if needed. Please reach out to us for more information.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Additional FAQ -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="artifacts/room.png" alt="Music therapy space">
+                            <p class="card-title">Pricing</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>How much do sessions cost?</h3>
+                            <p>All currently offered programs cost $175 for 9 sessions. We accept payment via e-transfer. Contact us for custom pricing options.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="section faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h3>How do I sign up for classes?</h3>
-                    <p>You can sign up using the form below, and we'll contact you within 24 hours to confirm your enrollment.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What if I have no music experience?</h3>
-                    <p>No experience necessary! Our sessions are designed for all levels. Music therapy is about the therapeutic benefit, not musical skill.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How long is each session?</h3>
-                    <p>Sessions run for 30 minutes.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>What's your cancellation policy?</h3>
-                    <p>TDB</p>
-                </div>
-                <div class="faq-item">
-                    <h3>Do you offer virtual sessions?</h3>
-                    <p>Our standard programs are all in person, but I'd be happy to discuss virtual options if needed. Please reach out to us for more information.</p>
-                </div>
-                <div class="faq-item">
-                    <h3>How much do sessions cost?</h3>
-                    <p>All currently offerred programs cost $175 for 9 sessions.  We accept payment viae-transfer.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Fallback FAQ Section (id for nav link) -->
+    <section id="faq" style="display: none;"></section>
 
     <!-- Contact Section -->
     <section id="contact" class="section contact">
