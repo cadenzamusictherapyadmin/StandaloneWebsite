@@ -1,0 +1,7 @@
+{
+  "extends": "html-validate:recommended",
+  "rules": {
+    "close-attr-quotes": ["warn", { "style": "double" }],
+    "no-inline-style": "warn"
+  }
+}

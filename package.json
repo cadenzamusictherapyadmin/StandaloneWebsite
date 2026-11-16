@@ -1,0 +1,44 @@
+{
+  "name": "cadenza",
+  "version": "1.0.0",
+  "description": "A music therapy business in Winnipeg, MB, led by Lacey Friesen (Music Therapist, board certification pending).",
+  "main": "demo.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "npm run validate:syntax && npm run lint:css && npm run lint:js && npm run lint:html",
+    "validate:syntax": "node validate-syntax.js",
+    "lint:css": "stylelint \"*.css\"",
+    "lint:js": "eslint \"*.js\"",
+    "lint:html": "html-validate \"*.html\"",
+    "format": "prettier --write \"*.{html,css,js}\"",
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cadenzamusictherapyadmin/StandaloneWebsite.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cadenzamusictherapyadmin/StandaloneWebsite/issues"
+  },
+  "homepage": "https://github.com/cadenzamusictherapyadmin/StandaloneWebsite#readme",
+  "lint-staged": {
+    "*.css": "stylelint",
+    "*.js": "eslint",
+    "*.html": "html-validate"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-html": "^8.2.1",
+    "html-validate": "^11.21.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.1",
+    "prettier": "^3.10.1",
+    "stylelint": "^18.0.0",
+    "stylelint-config-standard": "^41.0.0"
+  }
+}
