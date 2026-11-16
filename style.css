@@ -28,7 +28,65 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
+/* Construction Banner */
+.construction-banner {
+    background: linear-gradient(90deg, #FFB81C 0%, #FFA500 50%, #FFB81C 100%);
+    padding: 1rem 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 999;
+}
+
+.construction-banner-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.construction-icon {
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+}
+
+.construction-text {
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@media (max-width: 768px) {
+    .construction-banner {
+        padding: 0.75rem 15px;
+    }
+
+    .construction-banner-content {
+        gap: 0.5rem;
+    }
+
+    .construction-icon {
+        font-size: 1.2rem;
+    }
+
+    .construction-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Navigation - adjusted for banner */
 .navbar {
     background: white;
     box-shadow: var(--shadow);
